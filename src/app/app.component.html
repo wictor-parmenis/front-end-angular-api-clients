@@ -1,39 +1,25 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
 
 <div class="main">
-  <form #myform = "ngForm" (ngSubmit)="cadaster(myform)">
+  <form [formGroup]="cadasterForm" (ngSubmit)="onSubmit()">
     <h1>Cadastrar Usuário</h1>
     <div class="main__inputs">
       <label for="name">Nome Completo</label>
-      <input   ngModel minlength="4"  type="text" name="name" placeholder="nome" id="" required>
+      <input    formControlName="name"  type="text" name="name" placeholder="nome" id="" class="form-control">
     </div>
+
     <div class="main__inputs">
         <label for="tel">Telefone</label>
-        <input ngModel type="tel" name="phone" placeholder="00 00000 0000" id="" required>
+        <input type="tel" name="phone" formControlName="tel" placeholder="00 00000 0000" id="" class="form-control">
     </div>
     <div class="main__inputs">
       <label for="email">Email</label>
-      <input ngModel type="email" name="email" placeholder="exemplo@exemplo.com" id="" required>
+      <input type="email" name="email" formControlName="email" placeholder="exemplo@exemplo.com" id="" class="form-control">
     </div>
+    
     <button type="submit">Enviar</button>
   </form>
 
 </div>
 
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 <router-outlet></router-outlet>
