@@ -39,9 +39,6 @@ export class AppComponent {
         const name = this.cadasterForm.get('name')
         const valid = this.cadasterForm.valid 
 
-        console.log(name, tel, email);
-        console.log(this.cadasterForm.get('email')?.value);
-
         if (valid) {
           this.registerService.cadaster(name?.value,  tel?.value, email?.value).subscribe((res) => {
             alert('registrado com sucesso.')            
@@ -54,14 +51,10 @@ export class AppComponent {
 
             
           })
-        } 
+        } else {
+          alert('Por favor, adicione todos os dados no formulário.')
+        }
 
-
-        
-
-      
-
-      
     }
 
   
